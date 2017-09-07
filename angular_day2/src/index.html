@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='bb'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Brickbuster Movies</title>
+    <link rel='stylesheet' type='text/css' href='style/index.css'>
+  </head>
+  <body>
+    <h1>Brickbuster Movies</h1>
+
+    <main ng-controller='MovieController as movieCtrl'>
+      <form name='addMovie'
+            ng-submit='addMovie.$valid && movieCtrl.addMovie(movieCtrl.newMovie)'
+            novalidate>
+        <input type='text'
+               name='title'
+               placeholder='Movie title'
+               ng-model='movieCtrl.newMovie.title'
+               required>
+        <input type='text'
+               name='releaseYear'
+               placeholder='Release year'
+               ng-model='movieCtrl.newMovie.releaseYear'>
+        <select ng-cloak
+                ng-controller='GenreController as genreCtrl'
+                ng-model='movieCtrl.newMovie.genreId'>
+          <option ng-repeat='genre in genreCtrl.genreList'
+                  value={{genre.id}}>
+            {{genre.name}}
+          </option>
+        </select>
+        <input type='submit'
+               value='Add Movie'>
+        <p ng-cloak
+           ng-show='addMovie.title.$touched && !addMovie.title.$valid'>You must have a title!</p>
+        <p ng-cloak
+           ng-show='movieCtrl.newMovie.title.length'>You are about to add {{movieCtrl.newMovie.title}}</p>
+      </form>
+      <ul ng-controller='GenreController as genreCtrl'>
+        <li ng-cloak ng-repeat='movie in movieCtrl.movies'>
+          {{movie.title}} ({{movie.releaseYear}}) ({{genreCtrl.getGenreName(movie.genreId)}})
+        </li>
+      </ul>
+    </main>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
+    <script src='js/bb.module.js'></script>
+    <script src='js/movie.controller.js'></script>
+    <script src='js/genre.controller.js'></script>
+  </body>
+</html>

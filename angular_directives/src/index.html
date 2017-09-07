@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='lecture'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Week 9 - Directives and Filters</title>
+    <link rel='stylesheet' href='/styles/style.css'>
+    <!-- We can target element directives in 
+    new browsers but don't rely on it. Target
+    a class or id instead -->
+  </head>
+  <body>
+    <header ng-controller='HeaderController as headCtrl'>
+      <h1>Week 9 - Directives and Filters</h1>
+
+      <tiy-clock time-format='"h:mm a"' capture='headCtrl.captureTime()'></tiy-clock>
+    </header>
+
+    <main ng-controller='LectureController as lecture'>
+      <article ng-repeat='movie in lecture.movies' tiy-movie movie='movie' collection='lecture.movies'>
+      </article>
+      <!--  <tiy-movie ng-repeat='movie in lecture.movies' movie='movie' collection='lecture.movies'></tiy-movie> -->
+      <!-- We could use directives in this manner, as an element, if we wanted to -->
+    </main>
+
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js'></script>
+    <script src='/js/lecture.module.js'></script>
+    <script src='/js/lecture.controller.js'></script>
+    <script src='/js/tiy-movie.directive.js'></script>
+    <script src='/js/tiy-clock.directive.js'></script>
+    <script src='/js/header.controller.js'></script>
+  </body>
+</html>

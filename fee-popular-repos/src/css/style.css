@@ -1,0 +1,61 @@
+[type='text'] {
+  width: 20em;
+  display: inline-block;
+}
+
+.gh-repos ul {
+  margin: 0;
+  padding: 0;
+}
+
+.gh-repos li {
+  list-style: none;
+  display: block;
+  float: left;
+  margin: 0.3em;
+}
+
+.gh-repos {
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.gh-repo {
+  margin: 10px 0;
+  padding: 0.2em;
+  width: 13em;
+  min-height: 3em;
+  text-align: center;
+  border: 1px solid #666;
+  border-radius: 0.2em;
+  width: 100%;
+}
+
+.panel-heading {
+  border-bottom: 2px solid black;
+  background-color: rgba(46, 67, 86, 0.8);
+}
+
+.panel-body {
+  background-color: rgba(237, 233, 206, 1);
+}
+
+.panel-body p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+}
+
+.panel-heading:hover {
+  cursor: pointer;
+}
+
+.repo-header {
+  font-family: 'Raleway', sans-serif;
+  font-size: 4.5em;
+  color: white;
+}
+
+.hidden {
+  height: 0;
+}

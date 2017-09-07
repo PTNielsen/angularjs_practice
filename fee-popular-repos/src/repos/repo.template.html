@@ -1,0 +1,14 @@
+<section class='panel gh-repo'>
+  <header class='panel-heading'>
+    <h2 class='repo-header'>{{repo.name}}</h2>
+  </header>
+
+  <article class='panel-body'>
+    <p>URL: {{repo.html_url}}</p>
+    <p>Language: {{repo.language}}</p>
+    <p>Stargazer Count: {{repo.stargazers_count}}</p>
+    <p>Forks: {{repo.forks_count}}</p>
+    <p>Issue Count: {{repo.open_issues_count}}</p>
+    <p>Size: {{repo.size | fileSizeFormatter}}</p>
+  </article>
+</section>

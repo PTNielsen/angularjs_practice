@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en' ng-app="email">
+  <head>
+    <meta charset='utf-8'>
+    <title>Angular Basics</title>
+  </head>
+  <body>
+    <h1>Angular Basics</h1>
+    <p>One plus one is {{1+1}}</p>
+
+    <!-- EmailController is created when needed and is only accessible inside the tag in which it's created -->
+    <main ng-controller="EmailController as emailCtrl">
+      <h2>Welcome, {{emailCtrl.name}}!  It is {{emailCtrl.getShortDate()}}</h2>
+
+      <button ng-click="emailCtrl.checkEmail()">Check Email</button>
+
+      <ul>
+        <!-- Convention is to stack Angular directives like below 
+        since they tend to be sooooo long -->
+        <!-- ng-class can be used to add a class to certain items but not
+        others based on some requirement -->
+        <!-- ng-hide and ng-show can be used to dynamically decided whether or not to show
+        an element -->
+        <li ng-repeat="email in emailCtrl.emails | orderBy:'-receivedTime'">
+          <h3>From: {{email.sender}}</h3>
+          <p>Subject: {{email.subject}}</p>
+          <!-- 'date' below is a filter provided by Angular -->
+          <time>Received: {{email.receivedTime | date: 'short'}}</time>
+        </li>
+      </ul>
+    </main>
+
+    <!-- EmailController is not accessible down here unless we explicity add it.  If we added EmailController, it would be a different instance of the controller through the constructor function -->
+    <footer>
+    </footer>
+
+    <!-- Angular CDN must be first! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <!-- Module must be second! -->
+    <script src="/js/email.module.js"></script>
+    <!-- Controllers and Directives can be in any order -->
+    <script src="/js/email.controller.js"></script>
+  </body>
+</html>

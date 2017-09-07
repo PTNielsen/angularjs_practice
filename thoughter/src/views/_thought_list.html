@@ -1,0 +1,12 @@
+<section ng-cloak>
+  <p ng-repeat='thought in thoughtCtrl.thoughts'>
+    {{thought.content}}
+    <a ui-sref='single-thought({id: thought.id})'>
+      details
+    </a>
+  </p>
+
+  <button ng-click="thoughtCtrl.getThoughts()">
+    Show me more
+  </button>
+</section>

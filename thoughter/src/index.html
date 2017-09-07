@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='thoughter'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Thoughter</title>
+    <link rel='stylesheet' type='text/css' href='styles/index.css' />
+  </head>
+  <body>
+    <header>
+      <h1>Thoughter</h1>
+      <nav ng-controller='NavController as navCtrl'>
+        <ul>
+          <li>
+            <a ui-sref='home'>Home</a>
+          </li>
+          <li>
+            <a ui-sref='about'>About</a>
+          </li>
+          <li ng-cloak ng-show='nav.isLoggedIn()'>
+            <a ui-sref='create'>Create Post</a>
+          </li>
+          <li>
+            <a ui-sref='login'>Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main ui-view>
+    </main>
+
+    <footer>
+      <p>&copy; Patrick Nielsen 2017</p>
+    </footer>
+
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
+    <script src='//unpkg.com/angular-ui-router/release/angular-ui-router.min.js'></script>
+    <script src='/js/thoughter.module.js'></script>
+    <script src='/js/thought.service.js'></script>
+    <script src='/js/thought.controller.js'></script>
+    <script src='/js/user.controller.js'></script>
+    <script src='/js/user.service.js'></script>
+    <script src='/js/nav.controller.js'></script>
+  </body>
+</html>

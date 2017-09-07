@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/Cellar/node/7.7.1_1/bin/node /usr/local/bin/yarn add -d grunt karma mocha chai karma-mocha karma-chai grunt-karma karma-chrome-launcher
+
+PATH: 
+  /Users/patricknielsen1/.rbenv/shims:/Users/patricknielsen1/.rbenv/shims:/Users/patricknielsen1/.rbenv/bin:/Users/patricknielsen1/.rbenv/shims:/Users/patricknielsen1/.rbenv/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/ImageMagick/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/bin:/Users/patricknielsen1/go/bin
+
+Yarn version: 
+  0.21.3
+
+Node version: 
+  7.7.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "angular_services",
+    "version": "1.0.0",
+    "main": "build/js/school.module.js",
+    "scripts": {
+      "test": "karma start main.conf.js"
+    },
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: read ETIMEDOUT
+      at exports._errnoException (util.js:1029:11)
+      at TLSWrap.onread (net.js:575:26)
